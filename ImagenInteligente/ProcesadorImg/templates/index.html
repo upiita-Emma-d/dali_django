@@ -1,0 +1,11 @@
+<form enctype="multipart/form-data" method="POST" >
+    {% csrf_token %} 
+    {{formulario.as_p}}
+    <input value="Ecualizar" class="btn btn-primary" type="submit">
+</form>
+{%if img_obj %}
+    <h3>Procesamiento completo : {{img_obj.title}}</h3>
+    <img src = "{{img_obj.image.url}}" alt = "connect" style = "max-length:300px">
+
+{% endif %}
+<a href="/respuesta">Ver /respuesta</a>
